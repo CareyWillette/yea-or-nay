@@ -1,6 +1,6 @@
 DROP TABLE votes;
-DROP TABLE polls;
 DROP TABLE options;
+DROP TABLE polls;
 
 
 CREATE TABLE polls (
