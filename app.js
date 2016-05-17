@@ -23,9 +23,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(cors({allowedOrigins: [
-//     'sheltered-basin-3256.herokuapp.com/'
-//   ]}));
+app.use(cors({allowedOrigins: [
+    'yeaornah.herokuapp.com/'
+  ]}));
 
 app.use('/', routes);
 
