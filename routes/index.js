@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('praise.js');
+var db = require('../lib/praise.js');
 var parse = require('../lib/body-parser');
 var getResults = require('../lib/results');
 
