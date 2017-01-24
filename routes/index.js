@@ -5,6 +5,7 @@ var parse = require('../lib/body-parser');
 var getResults = require('../lib/results');
 
 router.post('/new-poll', function(req ,res){
+  console.log(req);
   db.insert('polls', parse.newPoll(req.body)).then(function(poll){
     var newOptions = parse.newOptions(poll.id, req.body);
     db.insert('options', newOptions)
@@ -19,6 +20,7 @@ router.get('/poll/:id/results', function(req, res){
 })
 
 router.get('/poll/:id/:access_code*?', function(req, res){
+  console.log(req.params.access_code);
   db.selectById('polls', req.params.id).then(function(poll){
     if (poll.access_code){
       if (!(req.params.access_code === poll.access_code)){
